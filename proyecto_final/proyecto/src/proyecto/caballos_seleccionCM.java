@@ -38,13 +38,13 @@ public class caballos_seleccionCM extends HttpServlet {
 		response.setContentType("text/html");
 		String opcion=(request.getParameter("escoja"));
 		nombreC c= new nombreC();
-		if(opcion.equals("Capricho")) {
-		      response.sendRedirect("capricho.jsp");
-		      String nombre=c.setNombre("capricho");
+		if(opcion.equals("Cap")) {
+		      response.sendRedirect("cap.jsp");
+		      String nombre=c.setNombre("cap");
 				 c.getNombre(nombre);
-		}else if(opcion.equals("Marengo")){
-				response.sendRedirect("Marengo.html");
-				 String nombre=c.setNombre("marengo");
+		}else if(opcion.equals("M")){
+				response.sendRedirect("M.html");
+				 String nombre=c.setNombre("m");
 				 c.getNombre(nombre);
 		}
 		}
