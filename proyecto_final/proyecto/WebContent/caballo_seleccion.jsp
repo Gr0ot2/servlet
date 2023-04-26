@@ -8,10 +8,10 @@
 </head>
 <body>
 <form action="caballos_seleccionCM" method="post">
-<label id="label">¿Que caballo quieres ver Marengo o Capricho?</label>
+<label id="label">Â¿Que caballo quieres ver Marengo o Capricho?</label>
 <br></br>
-<input id="radio" type="radio" name="escoja" value="Marengo">Marengo
-<input id="radio" type="radio" name="escoja" value="Capricho">Capricho
+<input id="radio" type="radio" name="escoja" value="M">Marengo
+<input id="radio" type="radio" name="escoja" value="Cap">Capricho
 <br></br>
  <input name="enviar" type="submit"/>
 </form>
