@@ -65,7 +65,7 @@ public class acceso_pupilaje extends HttpServlet {
     	  String obtenerPassword=null;
     	  String obtenerUsuario=null;
 
-        	PreparedStatement insertarContraseÒa;
+        	PreparedStatement insertarContrase√±a;
       	ResultSet obtenerUser=null;
       	ResultSet comprobarUser=null;
 
@@ -88,13 +88,13 @@ public class acceso_pupilaje extends HttpServlet {
 			while(obtenerUser.next()) {
 				 obtenerPassword= obtenerUser.getString(1);
 				if(obtenerPassword.length()==0) {
-				insertarContraseÒa=conn.prepareStatement(
+				insertarContrase√±a=conn.prepareStatement(
 						"update `pupilaje` set password='"+password+"' where user='"+user+"';");
-				insertarContraseÒa.executeUpdate();
+				insertarContrase√±a.executeUpdate();
 				}			
 				 if(obtenerPassword.length()!=0){
 					 if(!obtenerPassword.equals(password)){
-					JOptionPane.showMessageDialog(null, "lo siento no ha escrito bien su contraseÒa");
+					JOptionPane.showMessageDialog(null, "lo siento no ha escrito bien su contrase√±a");
 					RequestDispatcher rd=
 							request.getRequestDispatcher("acceso_pupilaje.jsp");
 					rd.forward(request, response);
@@ -108,21 +108,21 @@ public class acceso_pupilaje extends HttpServlet {
 				 nombreC c= new nombreC();
 				 obtenerUsuario= comprobarUser.getString(1);
 				 if(obtenerUsuario.length()!=0){
-				 if(obtenerUsuario.equals("Esther")) {
-					 response.sendRedirect("caballos_esther.jsp");
+				 if(obtenerUsuario.equals("E")) {
+					 response.sendRedirect("caballos.jsp");
 					 String nombre=c.setNombre("caballos");
 					 c.getNombre(nombre);
 				 }
-				 else if(obtenerUsuario.equals("Marinera")) {
-					 response.sendRedirect("relampago.jsp");
+				 else if(obtenerUsuario.equals("M")) {
+					 response.sendRedirect("rel.jsp");
 					 String nombre=c.setNombre("relampago");
 					 c.getNombre(nombre);
 				 }
-				 else if(obtenerUsuario.equals("hectorino")) {
+				 else if(obtenerUsuario.equals("h")) {
 					 response.sendRedirect("caballo_seleccion.jsp");
 				 }
-				 else if(!obtenerUsuario.equals("hectorino")||!obtenerUsuario.equals("Marinera")||!obtenerUsuario.equals("Esther")) {
-					 JOptionPane.showMessageDialog(null, "no est· registrado en la base de datos ");
+				 else if(!obtenerUsuario.equals("h")||!obtenerUsuario.equals("M")||!obtenerUsuario.equals("E")) {
+					 JOptionPane.showMessageDialog(null, "no est√° registrado en la base de datos ");
 				 }
 				 }
 			 }
